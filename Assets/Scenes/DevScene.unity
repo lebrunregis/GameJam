@@ -481,6 +481,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1703041059}
     - target: {fileID: 865051499946749736, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: repeatTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 865051499946749736, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: startupTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 865051499946749736, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_OnRepeat.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -554,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942130292853423916, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.51
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 2347071197700872316, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2347071197700872316, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 3256812185058536027, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_LocalPosition.x

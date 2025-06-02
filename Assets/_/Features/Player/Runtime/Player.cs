@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
     #region Main Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision " + collision.gameObject.layer);
         if (collision.gameObject.layer == m_floorLayer)
         {
             Debug.Log("Floor");

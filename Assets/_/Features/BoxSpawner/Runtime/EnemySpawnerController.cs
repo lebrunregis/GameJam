@@ -3,7 +3,7 @@ using Tools;
 using UnityEngine;
 
 [RequireComponent(typeof(Repeater))]
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawnerController : MonoBehaviour
 {
     public Transform m_player;
     public List<Transform> m_spawnLocations = new();
