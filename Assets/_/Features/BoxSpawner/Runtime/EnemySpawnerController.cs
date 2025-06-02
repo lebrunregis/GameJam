@@ -118,7 +118,7 @@ public class EnemySpawnerController : MonoBehaviour
 
     private void SpawnEnemyAtRandomSpawn(GameObject enemy)
     {
-        int spawnId =Random.Range(0, m_spawnLocations.Count);
+        int spawnId = Random.Range(0, m_spawnLocations.Count);
         enemy.transform.position = m_spawnLocations[spawnId].position + new Vector3(UnityEngine.Random.Range(-m_spawnSpread, m_spawnSpread), UnityEngine.Random.Range(-m_spawnSpread, m_spawnSpread), 0);
     }
 }

@@ -50,14 +50,12 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == m_floorLayer)
         {
-            Debug.Log("Floor");
             m_jumpEnabled = true;
             SetActiveSprite();
         }
         else if (collision.gameObject.layer == m_boxLayer)
         {
             {
-                Debug.Log("Box");
                 m_jumpEnabled = false;
                 m_isAlive = false;
                 SetActiveSprite();
