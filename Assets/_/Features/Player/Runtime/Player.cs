@@ -1,8 +1,6 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -24,8 +22,8 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        m_boxLayer = (int) Math.Log(m_damageMask.value, 2);
-        m_floorLayer = (int) Math.Log(m_groundMask.value, 2);
+        m_boxLayer = (int)Math.Log(m_damageMask.value, 2);
+        m_floorLayer = (int)Math.Log(m_groundMask.value, 2);
 
     }
     private void OnEnable()
@@ -114,8 +112,8 @@ public class Player : MonoBehaviour
 
     #region Private and Protected
     private Rigidbody2D m_rigidbody;
-    int m_boxLayer;
-    int m_floorLayer;
+    private int m_boxLayer;
+    private int m_floorLayer;
     #endregion
 
 
