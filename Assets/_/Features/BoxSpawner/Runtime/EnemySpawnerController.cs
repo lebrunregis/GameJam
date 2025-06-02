@@ -59,8 +59,6 @@ public class EnemySpawnerController : MonoBehaviour
         GameObject enemy = m_enemyPool.GetFirstAvailableObject();
         if (enemy != null)
         {
-
-            enemy.SetActive(true);
             m_activeEnemies.Add(enemy);
             switch (m_spawnBehavior)
             {
@@ -71,6 +69,8 @@ public class EnemySpawnerController : MonoBehaviour
                     SpawnEnemyAtRandomSpawn(enemy);
                     break;
             }
+           
+            enemy.SetActive(true);
             ApplyRigibodySettings(enemy);
         }
         else
