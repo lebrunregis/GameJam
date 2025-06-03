@@ -1,26 +1,27 @@
 using System;
+using Spine.Unity;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent (typeof(AudioSource))]
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     #region Publics
     public bool m_jumpEnabled;
     public bool m_isAlive;
+    public bool m_drawSprite = false;
     public float m_baseGravityScale = 1f;
     public LayerMask m_damageMask;
     public LayerMask m_groundMask;
     public GameObject m_deadSprite;
     public GameObject m_upSprite;
     public GameObject m_downSprite;
-    private GameObject m_fallingSprite;
     public Vector2 m_deathAddForce;
     public float m_deathAddTorque;
     public AudioSource m_jumpAudioSource;
     public AudioSource m_deathAudioSource;
+    public SkeletonAnimation m_skeletonAnimation;
     #endregion
 
 
@@ -34,13 +35,12 @@ public class Player : MonoBehaviour
 
     }
     private void OnEnable()
-    {
-        m_rigidbody = GetComponent<Rigidbody2D>();
-        m_deadSprite.SetActive(false);
-        m_upSprite.SetActive(false);
-        m_downSprite.SetActive(false);
-        m_rigidbody.gravityScale = m_baseGravityScale;
+    {  
         m_isAlive = true;
+  
+        m_rigidbody = GetComponent<Rigidbody2D>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+      m_rigidbody.gravityScale = m_baseGravityScale;
         SetActiveSprite();
     }
 
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
                 m_jumpEnabled = false;
                 m_isAlive = false;
                 SetActiveSprite();
-                m_rigidbody.AddForce( new Vector2(m_deathAddForce.x *collision.rigidbody.linearVelocityX, m_deathAddForce.y  * collision.rigidbody.linearVelocityY * m_rigidbody.gravityScale));
+                m_rigidbody.AddForce(new Vector2(m_deathAddForce.x * collision.rigidbody.linearVelocityX, m_deathAddForce.y * collision.rigidbody.linearVelocityY * m_rigidbody.gravityScale));
                 m_rigidbody.AddTorque(m_deathAddTorque * m_rigidbody.gravityScale);
                 m_deathAudioSource.Play();
             }
@@ -93,26 +93,62 @@ public class Player : MonoBehaviour
     #region Utils
     private void SetActiveSprite()
     {
-        if (m_isAlive)
+        if (m_skeletonAnimation != null)
         {
-            if (m_rigidbody.gravityScale < 0)
+            if (m_isAlive)
             {
-                m_upSprite.SetActive(true);
-                m_downSprite.SetActive(false);
-                m_deadSprite.SetActive(false);
+                if (m_rigidbody.gravityScale < 0)
+                {
+                    m_skeletonAnimation.loop = true;
+                    m_skeletonAnimation.AnimationName = "Run-up";
+                    m_skeletonAnimation.initialFlipY = true;
+                    m_skeletonAnimation.Start();
+                }
+                else
+                {
+                    m_skeletonAnimation.loop = true;
+                    m_skeletonAnimation.AnimationName = "Run-Down";
+                    m_skeletonAnimation.initialFlipY = false;
+                    m_skeletonAnimation.Start();
+                }
+            }
+            else
+            {
+                m_skeletonAnimation.loop = false;
+                m_skeletonAnimation.AnimationName = "Death";
+                m_skeletonAnimation.Start();
+            }
+        }
+        if (m_drawSprite)
+        {
+            if (m_isAlive)
+            {
+                if (m_rigidbody.gravityScale < 0)
+                {
+                    m_upSprite.SetActive(true);
+                    m_downSprite.SetActive(false);
+                    m_deadSprite.SetActive(false);
+                }
+                else
+                {
+                    m_upSprite.SetActive(false);
+                    m_downSprite.SetActive(true);
+                    m_deadSprite.SetActive(false);
+                }
             }
             else
             {
                 m_upSprite.SetActive(false);
-                m_downSprite.SetActive(true);
-                m_deadSprite.SetActive(false);
+                m_downSprite.SetActive(false);
+                m_deadSprite.SetActive(true);
             }
         }
         else
         {
             m_upSprite.SetActive(false);
             m_downSprite.SetActive(false);
-            m_deadSprite.SetActive(true);
+            m_deadSprite.SetActive(false);
+            m_spriteRenderer.enabled = false;
         }
     }
     #endregion
@@ -122,6 +158,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D m_rigidbody;
     private int m_boxLayer;
     private int m_floorLayer;
+    private SpriteRenderer m_spriteRenderer;
     #endregion
 
 

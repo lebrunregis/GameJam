@@ -69,7 +69,7 @@ public class EnemySpawnerController : MonoBehaviour
                     SpawnEnemyAtRandomSpawn(enemy);
                     break;
             }
-           
+
             enemy.SetActive(true);
             ApplyRigibodySettings(enemy);
         }

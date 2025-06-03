@@ -7,7 +7,7 @@ public class EnemySpawnerDifficultyScalerController : MonoBehaviour
 {
     #region Publics
     public float m_time;
-    public float m_timeScale = 1/60;
+    public float m_timeScale = 1 / 60;
     public AnimationCurve m_spawnDelayAnimator;
     public float m_spawnDelayMaxDecrease = 1;
     public AnimationCurve m_initialVelocityAnimator;

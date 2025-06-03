@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent (typeof(SpriteRenderer))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Box : MonoBehaviour
 {
     #region Publics
@@ -11,8 +11,9 @@ public class Box : MonoBehaviour
     #region Unity Api
 
     private void OnEnable()
-    {  m_spriteRenderer = GetComponent<SpriteRenderer>();
-        if(transform.position.y > 0)
+    {
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        if (transform.position.y > 0)
         {
             m_spriteRenderer.flipY = true;
         }
@@ -25,7 +26,7 @@ public class Box : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-      
+
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class Box : MonoBehaviour
 
 
     #region Private and Protected
-    SpriteRenderer m_spriteRenderer = null;
+    private SpriteRenderer m_spriteRenderer = null;
     #endregion
 
 
