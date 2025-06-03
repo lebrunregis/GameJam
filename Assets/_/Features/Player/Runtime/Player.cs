@@ -2,18 +2,21 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     #region Publics
     public bool m_jumpEnabled;
     public bool m_isAlive;
-    public float m_gravityScale = 1f;
+    public float m_baseGravityScale = 1f;
     public LayerMask m_damageMask;
     public LayerMask m_groundMask;
     public GameObject m_deadSprite;
     public GameObject m_upSprite;
     public GameObject m_downSprite;
     private GameObject m_fallingSprite;
+    public Vector2 m_deathAddForce;
+    public float m_deathAddTorque;
     #endregion
 
 
@@ -32,7 +35,7 @@ public class Player : MonoBehaviour
         m_deadSprite.SetActive(false);
         m_upSprite.SetActive(false);
         m_downSprite.SetActive(false);
-        m_rigidbody.gravityScale = m_gravityScale;
+        m_rigidbody.gravityScale = m_baseGravityScale;
         m_isAlive = true;
         SetActiveSprite();
     }
@@ -59,6 +62,8 @@ public class Player : MonoBehaviour
                 m_jumpEnabled = false;
                 m_isAlive = false;
                 SetActiveSprite();
+                m_rigidbody.AddForce( new Vector2(m_deathAddForce.x *collision.rigidbody.linearVelocityX, m_deathAddForce.y  * collision.rigidbody.linearVelocityY * m_rigidbody.gravityScale));
+                m_rigidbody.AddTorque(m_deathAddTorque * m_rigidbody.gravityScale);
             }
         }
         else
@@ -74,6 +79,7 @@ public class Player : MonoBehaviour
             m_jumpEnabled = false;
             m_rigidbody.gravityScale = -m_rigidbody.gravityScale;
             SetActiveSprite();
+
         }
     }
     #endregion
