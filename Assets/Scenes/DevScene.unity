@@ -649,6 +649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4860418434275001300, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: initialFlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6527865696311763868, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_timeScale
       value: 0.008333334
@@ -933,6 +937,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7775569765615044548, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775569765615044548, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 52086f5ae84b10641bd06a3b55e00b2f, type: 2}
     - target: {fileID: 8608727130654036650, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_Name
       value: Level

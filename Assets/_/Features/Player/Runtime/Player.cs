@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {  
         m_isAlive = true;
-  
+          m_baseScale = transform.localScale;
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponent<SpriteRenderer>();
       m_rigidbody.gravityScale = m_baseGravityScale;
@@ -100,15 +100,15 @@ public class Player : MonoBehaviour
                 if (m_rigidbody.gravityScale < 0)
                 {
                     m_skeletonAnimation.loop = true;
-                    m_skeletonAnimation.AnimationName = "Run-up";
-                    m_skeletonAnimation.initialFlipY = true;
+                    m_skeletonAnimation.AnimationName = "Run-Up";
+                    transform.localScale = new(m_baseScale.x,-m_baseScale.y,m_baseScale.z);
                     m_skeletonAnimation.Start();
                 }
                 else
                 {
                     m_skeletonAnimation.loop = true;
                     m_skeletonAnimation.AnimationName = "Run-Down";
-                    m_skeletonAnimation.initialFlipY = false;
+                    transform.localScale = new(m_baseScale.x, m_baseScale.y, m_baseScale.z);
                     m_skeletonAnimation.Start();
                 }
             }
@@ -159,6 +159,7 @@ public class Player : MonoBehaviour
     private int m_boxLayer;
     private int m_floorLayer;
     private SpriteRenderer m_spriteRenderer;
+    private Vector3 m_baseScale;
     #endregion
 
 
