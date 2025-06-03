@@ -270,57 +270,147 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_time: 0
-  m_timeScale: 0.01666667
+  m_timeScale: 0.008333334
   m_spawnDelayAnimator:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 2.0140393
+      outSlope: 2.0140393
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.20463505
+      value: 0.41214305
+      inSlope: 0.40345258
+      outSlope: 0.40345258
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3783666
+      value: 0.20242578
+      inSlope: 5.914294
+      outSlope: 5.914294
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4317877
+      value: 0.8988085
+      inSlope: 4.634122
+      outSlope: 4.634122
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.57531816
+      value: 0.3580606
+      inSlope: -1.6465331
+      outSlope: -1.6465331
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8223182
+      value: 0.47524035
+      inSlope: 1.7138897
+      outSlope: 1.7138897
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 2.9533675
+      outSlope: 2.9533675
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_spawnDelayMaxDecrease: 1
+  m_spawnDelayMaxDecrease: 1.5
   m_initialVelocityAnimator:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 1.1168427
+      outSlope: 1.1168427
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15242985
+      value: 0.17024016
+      inSlope: 1.9319364
+      outSlope: 1.9319364
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2724546
+      value: 0.49995172
+      inSlope: 3.202356
+      outSlope: 3.202356
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40294728
+      value: 0.9772525
+      inSlope: -0.34180415
+      outSlope: -0.34180415
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60349226
+      value: 0.10662842
+      inSlope: -0.9588684
+      outSlope: -0.9588684
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8105532
+      value: 0.6084517
+      inSlope: 2.2451758
+      outSlope: 2.2451758
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 2.066798
+      outSlope: 2.066798
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_initialVelocityMaxIncrease: {x: -1, y: 0}
+  m_initialVelocityMaxIncrease: {x: -3, y: 0}
 --- !u!114 &1420488201676269956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: {fileID: 11400000, guid: 848f33b49933e714a9e65d4cf0fced35, type: 2}
+  m_autoReset: 1
 --- !u!1 &3800014534810749346
 GameObject:
   m_ObjectHideFlags: 0
