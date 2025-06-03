@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class ScoreSyncedScriptable : MonoBehaviour
 {
     public SyncedValue<int> currentScore;
     public bool m_autoReset;

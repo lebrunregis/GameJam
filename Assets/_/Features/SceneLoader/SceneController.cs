@@ -3,35 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    bool m_gameIsOver = false;
     public void OnPlayButtonPushed()
     {
-        SceneManager.LoadScene("DesignScene");
+        SceneManager.LoadScene("DesignScene",LoadSceneMode.Single);
     }
     public void OnQuitButtonPushed()
     {
         Application.Quit();
     }
 
-    public void OnPlayerDeath(bool val)
+    public void OnPlayerAlive(bool isAlive)
     {
-        if (val)
-        {
-            Debug.Log("Player is alive");
-        } else
+        if (!isAlive && !m_gameIsOver)
         {
             Debug.Log("Player is dead");
+            SceneManager.LoadScene("GameOverScene", LoadSceneMode.Additive);
+            m_gameIsOver = true;
         }
     }
 }

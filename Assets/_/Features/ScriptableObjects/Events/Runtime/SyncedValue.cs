@@ -4,8 +4,10 @@ using UnityEngine.Events;
 
 public class SyncedValue<T> : ScriptableObject
 {
-    public T sourceValue;
+    [SerializeField]
+    private T sourceValue;
     public List<UnityEvent<T>> listeners;
+    public bool enabled;
 
     public T SourceValue { get => sourceValue; set => SetSourceValue(value); }
 
@@ -28,9 +30,21 @@ public class SyncedValue<T> : ScriptableObject
 
     private void Raise(T val)
     {
-        for (int i = 0; i < listeners.Count; i++)
+        if (enabled)
         {
-            listeners[i].Invoke(val);
+            for (int i = 0; i < listeners.Count; i++)
+            {
+                listeners[i].Invoke(val);
+            }
         }
+    }
+    private void OnEnable()
+    {
+        enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        enabled = false;
     }
 }

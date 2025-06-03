@@ -31,6 +31,11 @@ public class EnemySpawnerController : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        m_repeater.enabled = false;
+    }
+
     // Update is called once per frame
     private void Update()
     {

@@ -10,7 +10,8 @@ public class SyncedValueListener<T> : MonoBehaviour
 
     private void OnEnable()
     {
-        m_raisedEvent.Invoke(m_syncValue.Subscribe(m_raisedEvent));
+        T val = m_syncValue.Subscribe(m_raisedEvent);
+        m_raisedEvent.Invoke(val);
     }
 
     private void OnDisable()

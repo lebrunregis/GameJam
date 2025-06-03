@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(EnemySpawnerController))]
 [RequireComponent(typeof(Repeater))]
-public class EnemySpawnerDifficultyScalerController : MonoBehaviour
+public class EnemySpawnerDifficultyScalingController : MonoBehaviour
 {
     #region Publics
     public float m_time;
@@ -36,6 +36,10 @@ public class EnemySpawnerDifficultyScalerController : MonoBehaviour
         m_repeater.repeatTime = m_repeatTime - m_spawnDelayMaxDecrease * m_spawnDelayAnimator.Evaluate(m_time);
     }
 
+    private void OnDisable()
+    {
+        m_enemySpawner.enabled = false;
+    }
     #endregion
 
 
