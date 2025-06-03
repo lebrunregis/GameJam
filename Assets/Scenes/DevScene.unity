@@ -925,6 +925,14 @@ PrefabInstance:
       propertyPath: m_initialVelocityAnimator.m_Curve.Array.data[6].tangentMode
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 6568471586463857076, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568471586463857076, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8608727130654036650, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_Name
       value: Level
@@ -968,6 +976,10 @@ PrefabInstance:
     - target: {fileID: 8702640290469211148, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910805921658050472, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
