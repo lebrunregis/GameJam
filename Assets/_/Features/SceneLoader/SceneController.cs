@@ -23,4 +23,15 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnPlayerDeath(bool val)
+    {
+        if (val)
+        {
+            Debug.Log("Player is alive");
+        } else
+        {
+            Debug.Log("Player is dead");
+        }
+    }
 }

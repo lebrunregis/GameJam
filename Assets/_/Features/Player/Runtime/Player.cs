@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 {
     #region Publics
     public bool m_jumpEnabled;
-    public bool m_isAlive;
+    public SyncedBoolValue m_isAlive;
     public bool m_drawSprite = false;
     public float m_baseGravityScale = 1f;
     public LayerMask m_damageMask;
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     }
     private void OnEnable()
     {  
-        m_isAlive = true;
+        m_isAlive.sourceValue = true;
           m_baseScale = transform.localScale;
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         {
             {
                 m_jumpEnabled = false;
-                m_isAlive = false;
+                m_isAlive.sourceValue = false;
                 SetActiveSprite();
                 m_rigidbody.AddForce(new Vector2(m_deathAddForce.x * collision.rigidbody.linearVelocityX, m_deathAddForce.y * collision.rigidbody.linearVelocityY * m_rigidbody.gravityScale));
                 m_rigidbody.AddTorque(m_deathAddTorque * m_rigidbody.gravityScale);
