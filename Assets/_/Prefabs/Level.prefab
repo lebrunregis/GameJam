@@ -1548,6 +1548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b270186ca8244409de6ae9db65871c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameIsOver: {fileID: 11400000, guid: cc82f8d6e992ff7459951dff97d3abdf, type: 2}
+  m_playerIsAlive: {fileID: 11400000, guid: 4864e74af90ae2e4995060c72d73cfcd, type: 2}
 --- !u!1001 &634949968176670201
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
     {
         m_boxLayer = (int)Math.Log(m_damageMask.value, 2);
         m_floorLayer = (int)Math.Log(m_groundMask.value, 2);
-
+        m_isAlive.SourceValue = true;
+        m_score.ResetScore();
     }
     private void OnEnable()
     {
@@ -81,7 +82,7 @@ public class Player : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (m_jumpEnabled && m_isAlive)
+        if (m_jumpEnabled && m_isAlive.SourceValue == true)
         {
             m_jumpEnabled = false;
             m_rigidbody.gravityScale = -m_rigidbody.gravityScale;
@@ -97,7 +98,7 @@ public class Player : MonoBehaviour
     {
         if (m_skeletonAnimation != null)
         {
-            if (m_isAlive.SourceValue)
+            if (m_isAlive.SourceValue == true)
             {
                 if (m_rigidbody.gravityScale < 0)
                 {
@@ -123,7 +124,7 @@ public class Player : MonoBehaviour
         }
         if (m_drawSprite)
         {
-            if (m_isAlive)
+            if (m_isAlive.SourceValue == true)
             {
                 if (m_rigidbody.gravityScale < 0)
                 {

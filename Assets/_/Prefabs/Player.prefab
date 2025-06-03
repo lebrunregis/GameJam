@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jumpEnabled: 0
-  m_isAlive: 1
+  m_isAlive: {fileID: 11400000, guid: 4864e74af90ae2e4995060c72d73cfcd, type: 2}
   m_drawSprite: 0
   m_baseGravityScale: 1
   m_damageMask:
@@ -590,6 +590,7 @@ MonoBehaviour:
   m_jumpAudioSource: {fileID: 4764451007183660152}
   m_deathAudioSource: {fileID: 5167507500883803990}
   m_skeletonAnimation: {fileID: 5457350586681271853}
+  m_score: {fileID: 0}
 --- !u!82 &4764451007183660152
 AudioSource:
   m_ObjectHideFlags: 0
