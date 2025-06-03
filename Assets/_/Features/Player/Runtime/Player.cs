@@ -102,21 +102,21 @@ public class Player : MonoBehaviour
                     m_skeletonAnimation.loop = true;
                     m_skeletonAnimation.AnimationName = "Run-Up";
                     transform.localScale = new(m_baseScale.x,-m_baseScale.y,m_baseScale.z);
-                    m_skeletonAnimation.Start();
+            
                 }
                 else
                 {
                     m_skeletonAnimation.loop = true;
                     m_skeletonAnimation.AnimationName = "Run-Down";
                     transform.localScale = new(m_baseScale.x, m_baseScale.y, m_baseScale.z);
-                    m_skeletonAnimation.Start();
+                    
                 }
             }
             else
             {
                 m_skeletonAnimation.loop = false;
                 m_skeletonAnimation.AnimationName = "Death";
-                m_skeletonAnimation.Start();
+            
             }
         }
         if (m_drawSprite)
