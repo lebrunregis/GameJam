@@ -21,6 +21,6 @@ public class SceneController : MonoBehaviour
     }
     public void OnQuitButtonPushed()
     {
-
+        Application.Quit();
     }
 }
