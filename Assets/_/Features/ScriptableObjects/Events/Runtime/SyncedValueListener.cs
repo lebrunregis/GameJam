@@ -4,23 +4,22 @@ using UnityEngine.Events;
 public class SyncedValueListener<T> : MonoBehaviour
 {
     [SerializeField]
-    public SyncedValue<T> syncValue;
+    public SyncedValue<T> m_syncValue;
     [SerializeField]
-    public UnityEvent<T> _raised;
-    [SerializeField]
+    public UnityEvent<T> m_raisedEvent;
 
     private void OnEnable()
     {
-        _raised.Invoke(syncValue.Subscribe(_raised));
+        m_raisedEvent.Invoke(m_syncValue.Subscribe(m_raisedEvent));
     }
 
     private void OnDisable()
     {
-        syncValue.Unsubscribe(_raised);
+        m_syncValue.Unsubscribe(m_raisedEvent);
     }
 
     public void OnRaiseEvent(T val)
     {
-        _raised.Invoke(val);
+        m_raisedEvent.Invoke(val);
     }
 }

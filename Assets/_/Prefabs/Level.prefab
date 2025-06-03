@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1420488201676269956}
+        m_TargetAssemblyTypeName: Score, ScriptableObjects.Events.Runtime
+        m_MethodName: IncreaseScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   startupTime: 3
   repeatTime: 2
   repeatCount: 0
@@ -434,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 4712406391162874798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.08, y: 2, z: 0}
+  m_LocalPosition: {x: 8.08, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -465,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 5056963031948616741}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.99, y: -2, z: 0}
+  m_LocalPosition: {x: 7.99, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -685,6 +697,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8702640290469211148}
     m_Modifications:
+    - target: {fileID: 56411012889831907, guid: 39614b65fb1f439429227161746d4d98, type: 3}
+      propertyPath: m_deathAddTorque
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 56411012889831907, guid: 39614b65fb1f439429227161746d4d98, type: 3}
+      propertyPath: m_deathAddForce.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 56411012889831907, guid: 39614b65fb1f439429227161746d4d98, type: 3}
+      propertyPath: m_deathAddForce.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 117091728671839967, guid: 39614b65fb1f439429227161746d4d98, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1016,6 +1040,10 @@ PrefabInstance:
       propertyPath: mode
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8456768841093037330, guid: bceb34ca371415049ab82b287062951c, type: 3}
+      propertyPath: m_camera
+      value: 
+      objectReference: {fileID: 1230002602021328367}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
