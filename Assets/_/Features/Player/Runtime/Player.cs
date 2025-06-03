@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent (typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     #region Publics
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour
     private GameObject m_fallingSprite;
     public Vector2 m_deathAddForce;
     public float m_deathAddTorque;
+    public AudioSource m_jumpAudioSource;
+    public AudioSource m_deathAudioSource;
     #endregion
 
 
@@ -64,6 +68,7 @@ public class Player : MonoBehaviour
                 SetActiveSprite();
                 m_rigidbody.AddForce( new Vector2(m_deathAddForce.x *collision.rigidbody.linearVelocityX, m_deathAddForce.y  * collision.rigidbody.linearVelocityY * m_rigidbody.gravityScale));
                 m_rigidbody.AddTorque(m_deathAddTorque * m_rigidbody.gravityScale);
+                m_deathAudioSource.Play();
             }
         }
         else
@@ -79,7 +84,7 @@ public class Player : MonoBehaviour
             m_jumpEnabled = false;
             m_rigidbody.gravityScale = -m_rigidbody.gravityScale;
             SetActiveSprite();
-
+            m_jumpAudioSource.Play();
         }
     }
     #endregion
