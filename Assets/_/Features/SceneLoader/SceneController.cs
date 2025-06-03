@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour
 
     public void OnPlayButtonPushed()
     {
-        SceneManager.LoadScene("DevScene");
+        SceneManager.LoadScene("DesignScene");
     }
     public void OnQuitButtonPushed()
     {
