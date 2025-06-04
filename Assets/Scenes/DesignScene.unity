@@ -781,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527865696311763868, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_initialVelocityMaxIncrease.x
-      value: -24
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 6527865696311763868, guid: 4b3103f7bbb4bdb4ca6e6316e4eb2ddd, type: 3}
       propertyPath: m_spawnDelayAnimator.m_Curve.Array.size
