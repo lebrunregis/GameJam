@@ -139,7 +139,7 @@ namespace ScreenWrap
 
         private void Cleanup(Vector2 pos, Rect screenRect)
         {
-            if (IsOutsideView(transform.position, screenRect))
+            if (pos.x < screenRect.x - 2f)
             {
                 this.gameObject.SetActive(false);
             }
